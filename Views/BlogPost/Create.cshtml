@@ -1,0 +1,32 @@
+﻿@using IBlogWebApp.Data.Enum;
+@using IBlogWebApp.ViewModels;
+@model CreateBlogViewModel
+
+
+<h4>Create a new Blog post</h4>
+<form method="post" asp-action="Create" enctype="multipart/form-data">
+    <input type="hidden" id="AppUserId" name="AppUserId" asp-for="AppUserId">
+    <div class="form-group">
+        <label asp-for="Title">Title</label>
+        <input asp-for="Title" type="text" class="form-control" aria-describedby="emailHelp" placeholder="Title">
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="form-floating" style="margin-top:5px">
+        <textarea style="height:200px" asp-for="Content" class="form-control" aria-describedby="emailHelp" placeholder="Content"></textarea>
+        <label asp-for="Content">Blog Content</label>
+        <span asp-validation-for="Content" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Image">Image</label>
+        <input asp-for="Image" type="file" class="form-control" aria-describedby="emailHelp" placeholder="Image">
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="BlogPostCategory">Blog Category</label>
+        <select asp-for="BlogPostCategory" asp-items="@Html.GetEnumSelectList<BlogPostCategory>()" class="form-control">
+            <option>---Select---</option>
+        </select>
+        <span asp-validation-for="BlogPostCategory" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

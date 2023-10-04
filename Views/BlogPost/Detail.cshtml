@@ -1,0 +1,58 @@
+﻿@model BlogPost
+
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="center">
+            <div class="col-md-4">
+                <h3 class="my-3">@Model.Title</h3>
+                <small>By: @Model.Author</small>
+             </div>
+            <div class="col-md-8">
+                <img class="img-fluid" src="@Model.Image" width="100%" height="100" alt="Image">
+            </div>
+            <div class="col-md-4">
+                <div class="blog-item-content">
+                    <p>@Model.Content</p>
+                </div>
+                <ul>
+                    <li>
+                        <p class="blog-item-info">Published on: @Model.CreatedAt?.ToString("yyyy-MM-dd")</p>
+                    </li>
+                    @if(Model.LastUpdated != null)
+                    {
+                        <li>
+                            <p class="blog-item-info">Last Update: @Model.LastUpdated?.ToString("yyyy-MM-dd")</p>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="blog-item-info">Last Update: </li>
+                    }
+                    <li class="blog-item-info">Category: @Model.BlogPostCategory</li>
+                </ul>
+                <div>
+                    <h5>Comments</h5><hr>
+                    @if(Model.Comments.Count() != 0)
+                    {
+
+                        @foreach (var comment in Model.Comments)
+                        {
+                            <p>@comment.Content</p>
+                            <small>By: @comment.Author</small>
+                            <small>@comment.CreatedAt?.ToString("yyyy/MM/dd")</small><hr>
+                        }
+                    }
+                    else
+                    {
+                        <div>
+                            <h6>No Comments</h6>
+                        </div>
+                    }
+                    <div style="margin-top:20px; margin-bottom:30px">
+                        <a asp-controller="Comment" asp-route-id="@Model.Id" asp-action="Create" type="button" class="btn btn-sm btn-outline-danger">Add Comments</a>
+                    </div>
+                </div>
+
+            </div>
+     </div>
+</div>

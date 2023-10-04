@@ -1,0 +1,77 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+ <main role="main">
+
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">iBlog Hub</h1>
+          <p class="lead text-muted">
+              iBlogHub is a user-friendly web application that empowers individuals to create and share their thoughts,
+                experiences, and ideas with the world through personal blogs. Whether you're a seasoned blogger
+                or new to the world of online writing,
+                iBlogHub provides a platform where you can effortlessly write, manage, and publish your blog posts
+                on a variety of topics like Religion, Lifestyle, Technology, and so on.
+          </p>
+          <p>
+             <a class="btn btn-outline-primary" asp-area="" asp-controller="Account" asp-action="Login">Log in</a>
+
+             <a class="btn btn-outline-secondary" asp-area="" asp-controller="Account" asp-action="Register">Register</a>
+       </p>
+        </div>
+      </section>
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+            <h3 style="padding-top:30px; padding-bottom:30px">Featured Categories</h3>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+               <img class="card-img-top" height="300" src="https://media.istockphoto.com/id/1287163572/photo/asian-travel-bikini-woman-relax-in-infinity-pool-on-phuket-beach-thailand.webp?b=1&s=170667a&w=0&k=20&c=qXbiVhp7GmrwbnQ9ngDU2UtnkuoUdkj8GLSdroL7AzU=" alt="Card image cap">
+                <div class="card-body">
+                    <h6>LIFESTYLE</h6>
+                  <p class="card-text">
+                     Elevate your everyday life in our Lifestyle category. Find inspiration for a balanced and
+                     fulfilling existence, with articles on health, travel, fashion, 
+                     home decor, and more. Explore tips and tricks to enhance your well-being and make the 
+                     most of every moment.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" height="300" src="https://cdn.pixabay.com/photo/2018/10/02/04/57/religion-3717899_640.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h6>RELIGION</h6>
+                  <p class="card-text">
+                        Explore the diverse world of faith and spirituality in our Religion category. 
+                        From in-depth analyses of religious practices and beliefs to discussions on the
+                        impact of religion in today's society, this category offers a thought-provoking 
+                        journey into matters of the soul.
+                  </p>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                        <img class="card-img-top"  height="300" src="https://media.istockphoto.com/id/1321462048/photo/digital-transformation-concept-system-engineering-binary-code-programming.jpg?s=612x612&w=0&k=20&c=Ib8RLw3_eCOo9N3YE4pvp9rcb_WmirjS-9x9R-vTd68=" alt="Card image cap">
+                <div class="card-body">
+                    <h6>TECHNOLOGY</h6>
+                  <p class="card-text">
+                         Stay on the cutting edge of innovation with our Technology category. 
+                         Dive into the latest advancements in tech, from AI 
+                         and robotics to gadgets and software reviews. Discover how technology is 
+                         shaping our future and enhancing our lives.
+                  </p>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+</main>

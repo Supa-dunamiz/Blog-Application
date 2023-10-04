@@ -1,0 +1,49 @@
+﻿@using IBlogWebApp.ViewModels;
+@model RegisterViewModel
+
+<body class="text-center">
+    @{
+        ViewData["Title"] = "LogIn";
+    }
+    <center class="album py-5 bg-light">
+        <div class="row">
+
+            <p>
+                <h6 class="h3 mb-3 font-weight-normal">SIGN UP</h6>
+            </p>
+            @if (TempData["Error"] != null)
+            {
+                <div class="col-md-12 alert alert-danger">
+                    <span><b>Sorry!</b> - @TempData["Error"]</span>
+                </div>
+            }
+            <form asp-action="Register">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <label asp-for="FirstName" class="sr-only">First Name </label>
+                <input style="width:50%" asp-for="FirstName" type="text" class="form-control" placeholder="First Name" required autofocus>
+
+                <label asp-for="LastName" class="sr-only">Last Name </label>
+                <input style="width:50%" asp-for="LastName" type="text" class="form-control" placeholder="Last Name" required autofocus>
+
+                <label asp-for="UserName" class="sr-only">User Name </label>
+                <input style="width:50%" asp-for="UserName" type="text" class="form-control" placeholder="UserName" required autofocus>
+
+
+                <label asp-for="EmailAddress" class="sr-only">Email address</label>
+                <input style="width:50%" asp-for="EmailAddress" type="email" class="form-control" placeholder="Email address" required autofocus>
+
+                <label asp-for="Password" class="sr-only">Password</label>
+                <input style="width:50%" asp-for="Password" type="password" class="form-control" placeholder="Password" required>
+
+                <label asp-for="ConfirmPassword" class="sr-only">Confirm Password</label>
+                <input style="width:50%" asp-for="ConfirmPassword" type="password" class="form-control" placeholder="Confirm Password" required>
+
+                <div class="form-group" style="margin-top:20px; margin-bottom:30px">
+                    <input class="btn btn-outline-success float-right" type="submit" value="Sign up" />
+                    <a class="btn btn-outline-secondary" asp-controller="Account" asp-action="LogIn">Log In</a>
+                </div>
+            </form>
+    </center>
+    
+</body>

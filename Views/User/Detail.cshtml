@@ -1,0 +1,27 @@
+﻿﻿@using IBlogWebApp.ViewModels
+@model UserDetailViewModel
+
+<div class="album py-5 bg-light">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-8">
+                <img class="img-fluid" src="@Model.ProfileImageUrl" width="50%" height="50" alt="Image">
+            </div>
+            <div class="col-md-4">
+                <h3 class="my-3">@Model.UserName</h3>
+                <p>@Model.EmailAddress</p>
+                <h3 class="my-3">User Details</h3>
+                <ul>
+                    <li>First Name: <b>@Model.FirstName</b></li>
+                    <li>Last Name: <b>@Model.LastName</b></li>
+                    @if (Model.City != null && Model.State != null)
+                    {
+                        <li>Location: <b>@Model.City, @Model.State</b></li>
+                    }
+                    else
+                    {
+                        <li>Location: </li>
+                    }
+                </ul>
+            </div>

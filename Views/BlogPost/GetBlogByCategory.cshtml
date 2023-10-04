@@ -1,0 +1,17 @@
+﻿@using IBlogWebApp.Data.Enum;
+@using IBlogWebApp.ViewModels;
+@model BlogCategoryViewModel
+@{
+	ViewData["Title"] = "Search for blog by Category";
+}
+
+<form asp-action="BlogByCategory" method="get">
+    <div class="form-group">
+        <label asp-for="BlogPostCategory">Blog Category</label>
+        <select style="width:50%" asp-for="BlogPostCategory" asp-items="@Html.GetEnumSelectList<BlogPostCategory>()" class="form-control">
+            <option>---Select---</option>
+        </select>
+        <span asp-validation-for="BlogPostCategory" class="text-danger"></span>
+    </div>
+    <button style="margin-top:30px" type="submit" class="btn btn-outline-secondary">Search</button>
+</form>

@@ -1,0 +1,125 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+.blog-content{
+    width:800px;
+    height: fit-content;
+}
+
+.blog-title {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+/* CSS styles for the blog container */
+.blog-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* CSS styles for the blog list */
+.blog-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* CSS styles for each blog item */
+.blog-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+/* CSS styles for the blog item title */
+.blog-item-title {
+    font-size: 20px;
+    color: #333;
+    margin-top: 0;
+}
+
+/* CSS styles for the blog item content */
+.blog-item-content {
+    font-size: 16px;
+    color: #666;
+}
+
+/* CSS styles for the blog item info */
+.blog-item-info {
+    font-size: 14px;
+    color: #888;
+}
+
+/* CSS styles for the empty message */
+.empty-message {
+    font-size: 18px;
+    text-align: center;
+    color: #777;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    max-width: inherit;
+    margin: 0 auto;
+    padding: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+p {
+    line-height: 1.6;
+}
+
+.about h6 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #333;
+}
+
+    .about p {
+        font-size: 18px;
+    }
+
+/* Link styles */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+    a:hover {
+        color:cornsilk;
+    }
+

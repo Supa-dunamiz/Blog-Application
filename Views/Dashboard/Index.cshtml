@@ -1,0 +1,38 @@
+﻿@using IBlogWebApp.ViewModels;
+@model DashboardViewModel
+
+<h1 class="display-4 fw-normal">User Dashboard</h1>
+<a type="button" class="btn btn-primary" asp-area="" asp-controller="BlogPost" asp-action="Create">New Blog</a>
+<a class="btn btn-secondary" asp-route-id="AppUserId" asp-area="" asp-controller="User" asp-action="UserProfile">Profile</a>
+<center style="padding-top: 50px">
+    <h3>Blogs</h3>
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+
+            <div class="row">
+                @foreach (var item in Model.BlogPosts)
+                {
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src="@item.Image" width="100%" height="225" alt="Card image cap">
+                            <div class="card-body">
+                                <p class="card-text">@item.Title</p>
+                                <p class="card-text">Author: @item.Author</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a asp-controller="BlogPost" asp-action="Detail" asp-route-id="@item.Id" type="button" class="btn btn-sm btn-outline-secondary">View</a>
+                                        <a asp-controller="BlogPost" asp-action="Edit" asp-route-id="@item.Id" type="button" class="btn btn-sm btn-outline-secondary">Edit</a>
+                                        <a asp-controller="BlogPost" asp-action="Delete" asp-route-id="@item.Id" type="button" class="btn btn-sm btn-outline-secondary">Delete</a>
+                                    </div>
+                                    <small class="text-muted">Category: @item.BlogPostCategory</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</center>

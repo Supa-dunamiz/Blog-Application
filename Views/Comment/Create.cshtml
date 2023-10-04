@@ -1,0 +1,14 @@
+﻿@using IBlogWebApp.ViewModels;
+@model CreateCommentViewModel
+
+
+<h4>Add new Comment</h4>
+<form method="post" asp-action="Create">
+    <input type="hidden" id="BlogPostId" name="BlogPostId" asp-for="BlogPostId" value="">
+    <div class="form-group">
+        <label asp-for="Content">Add Comment</label>
+        <textarea style="height:200px" asp-for="Content" class="form-control" aria-describedby="emailHelp" placeholder="Content"></textarea>
+        <button style="margin-top:20px" type="submit" class="btn btn-outline-success">Submit</button>
+        <span asp-validation-for="Content" class="text-danger"></span>
+    </div>
+</form>

@@ -1,0 +1,36 @@
+﻿@using IBlogWebApp.Data.Enum;
+@using IBlogWebApp.ViewModels;
+@model BlogPost
+
+
+<h4>Delete Blog</h4>
+<form method="post" asp-action="Delete">
+    <div class="form-group">
+        <label asp-for="Title">Title</label>
+        <input asp-for="Title" readonly type="text" class="form-control" aria-describedby="emailHelp" placeholder="Title">
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="form-floating" style="margin-top:5px">
+        <textarea readonly style="height:200px" asp-for="Content" class="form-control" aria-describedby="emailHelp" placeholder="Content"></textarea>
+        <label asp-for="Content">Blog Content</label>
+        <span asp-validation-for="Content" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Image">Image</label>
+        <input readonly asp-for="Image" type="file" class="form-control" aria-describedby="emailHelp" placeholder="Image">
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="BlogPostCategory">Task Priority</label>
+        <select asp-for="BlogPostCategory" asp-items="@Html.GetEnumSelectList<BlogPostCategory>()" class="form-control">
+            <option>---Select---</option>
+        </select>
+        <span asp-validation-for="BlogPostCategory" class="text-danger"></span>
+    </div>
+</form>
+<div class="form-group">
+    <form action="Delete" method="post">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Confirm" class="btn btn-danger float-right mt-3" />
+    </form>
+</div>

@@ -1,0 +1,16 @@
+﻿@using IBlogWebApp.ViewModels;
+@model BlogAuthorViewModel
+
+@{
+    ViewData["Title"] = "Search for blog by Author";
+}
+
+
+<form asp-action="BlogByAuthor" method="get">
+    <div class="form-group">
+        <label asp-for="Author">Title</label>
+        <input asp-for="Author" type="text" class="form-control" aria-describedby="emailHelp" placeholder="Author">
+        <span asp-validation-for="Author" class="text-danger"></span>
+    </div>
+    <button style="margin-top:30px" type="submit" class="btn btn-outline-secondary">Search</button>
+</form>
